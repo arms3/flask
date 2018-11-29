@@ -1,16 +1,18 @@
 from flask import Flask, render_template  # , request, redirect
+from fetch_price import fetch
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    tbl = fetch()
+    return render_template('index.html', table=tbl)
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html',)
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
