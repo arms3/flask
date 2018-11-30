@@ -17,6 +17,6 @@ def fetch():
     # print(r.text)
     df = pd.read_csv(io.StringIO(r.text))
     # print(df.head())
-    return df.head().to_html(classes='table table-striped',border=0)
+    return df.head().to_html(classes='table table-striped',border=0, index=False)
 
 # fetch()
