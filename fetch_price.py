@@ -13,10 +13,7 @@ url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.csv'
 
 def fetch():
     r = requests.get(url, params=params)
-    # print(json.loads(r.text))
-    # print(r.text)
     df = pd.read_csv(io.StringIO(r.text))
-    # print(df.head())
     return df
 
 
